@@ -1,0 +1,300 @@
+@font-face {
+    font-family: cyberpunk;
+    src: url('cyberpunk-font.otf');
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        display: flex;
+        flex-direction: column;
+        background-image: url("bg2.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 20px;
+    }
+
+    .sidelinks{
+        display: none;
+    }
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        color: yellow;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-style: solid;
+        border-radius: 20px;
+    }
+    #navbar h1{
+        display: flex;
+        justify-content: start;
+        text-align: center;
+        font-family: cyberpunk;
+        font-size: 50px;
+    }
+    #navbar-ul{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        list-style: none;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    #navbar-ul li{
+        display: inline-flex;
+        color: yellow;
+        margin: auto;
+        padding: 10%;
+        white-space: nowrap;
+        text-align: center;
+        
+    }
+
+    #main{
+        margin: auto;
+        margin-top: 10%;
+        margin-bottom: 1%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: yellow;
+        flex-grow: 1;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    #main > :not(h2){
+        margin: auto;
+        color: yellow;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 80%;
+        font-size: 20px;
+    }
+    #main h2{
+        /* margin: auto; */
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-family: cyberpunk;
+        font-size: 50px;
+    }
+    #galeria{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .imagens-desc{
+        margin: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-style: solid;
+        border-color: yellow;
+        width: min-content;
+        padding: 10px;
+        text-align: center;
+
+    }
+    .imagem-galeria{
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        align-content: center;
+    }
+
+    #footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        color: yellow;
+        width: 100%;
+    }
+
+    footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    ul.lista-footer{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        align-items: center;
+    }
+
+    li.lista-footer-titulo{
+        font-size: 25px;
+    }
+    li :not(.lista-footer-titulo){
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        display: flex;
+        flex-direction: column;
+        background-image: url("bg2.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 20px;
+    }
+
+    .sidelinks{
+        display: block;
+        position: fixed;
+        background-color: black;
+        top: 50%;
+        left: 0;
+        color: yellow;
+        font-size: 20px;
+        width: 7%;
+    }
+    #hidden-links{
+        text-align: center;
+    }
+
+    #hidden-links-ul{
+        display: none;
+        list-style: none;
+    }
+
+    .sidelinks:hover #hidden-links-ul{
+        display: block;
+        color: yellow;
+    }
+
+
+    #navbar{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        color: yellow;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    #navbar h1{
+        display: flex;
+        justify-content: start;
+        font-family: cyberpunk;
+        font-size: 50px;
+    }
+    #navbar-ul{
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        flex-wrap: nowrap;
+    }
+
+    #navbar-ul li{
+        display: inline-flex;
+        color: yellow;
+        margin: auto;
+        padding: 10%;
+        white-space: nowrap;
+        
+    }
+
+    #main{
+        margin: auto;
+        margin-top: 10%;
+        margin-bottom: 1%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: yellow;
+        flex-grow: 1;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    #main > :not(h2){
+        margin: auto;
+        color: yellow;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 80%;
+        font-size: 20px;
+    }
+    #main h2{
+        /* margin: auto; */
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-family: cyberpunk;
+        font-size: 50px;
+    }
+    #galeria{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .imagens-desc{
+        margin: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-style: solid;
+        border-color: yellow;
+        width: fit-content;
+        padding: 10px;
+        text-align: center;
+
+    }
+    .imagem-galeria{
+        width: 300px;
+        height: 300px;
+        align-content: center;
+    }
+
+    #footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        color: yellow;
+        width: 100%;
+    }
+
+    footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    ul.lista-footer{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        align-items: center;
+    }
+
+    li.lista-footer-titulo{
+        font-size: 25px;
+    }
+    li :not(.lista-footer-titulo){
+        color: white;
+    }
+}

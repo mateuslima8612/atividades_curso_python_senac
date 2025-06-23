@@ -1,0 +1,30 @@
+form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+h2{
+    text-align: center;
+}
+label, input{
+    margin: auto;
+    margin-top: 5px;
+}
+#cpf-cnpj{
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#input-data{
+    margin: auto;
+    margin-top: 10px;
+}
+#input-checkbox{
+    margin: auto;
+    margin-top: 10px;
+}
+#button{
+    margin: auto;
+    margin-top: 10px;
+}

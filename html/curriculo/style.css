@@ -1,0 +1,16 @@
+
+body{
+    display: block;
+    background-color: white;
+    color: blue;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+img {
+    width: 200px;
+    height: auto;
+    border-radius: 20%;
+}
