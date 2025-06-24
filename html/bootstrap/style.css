@@ -1,0 +1,8 @@
+html, body, .side-bar, .container-fluid{
+    height: 100% !important;
+    margin: 0;
+}
+.side-bar{
+    background-color: yellow;
+    border-right: solid black 1px;
+}
