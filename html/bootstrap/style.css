@@ -1,8 +1,19 @@
+body{
+    background-image: url("bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 html, body, .side-bar, .container-fluid{
     height: 100% !important;
     margin: 0;
 }
-.side-bar{
-    background-color: yellow;
-    border-right: solid black 1px;
+
+#sidebar{
+    position: fixed;
+    list-style: none;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
 }
