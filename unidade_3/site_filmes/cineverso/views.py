@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Filme
 
 # Create your views here.
 
@@ -12,7 +13,8 @@ def embreve(request):
     return render(request, 'embreve.html')
 
 def filmes(request):
-    return render(request, 'filmes.html')
+    filmes = Filme.objects.all()
+    return render(request, 'filmes.html', {'lista_filmes': filmes})
 
 def noticias(request):
     return render(request, 'noticias.html')
