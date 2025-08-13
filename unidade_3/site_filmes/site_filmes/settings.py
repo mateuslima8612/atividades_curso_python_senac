@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-$nk^y+u=(&ni02@x_(zu63u!*fv&+as6sz*5*h3p1@=oq-@k0%'
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cineverso'
+    'cineverso',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +127,33 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = str(BASE_DIR / 'senac-django-credentials.json')
+
+# Backend de armazenamento
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+# Nome do seu bucket
+GS_BUCKET_NAME = 'senac-django'
+
+# ID do projeto
+GOOGLE_CLOUD_PROJECT = 'senac-django'
+
+# Para permitir que os arquivos sejam públicos
+GS_DEFAULT_ACL = 'publicRead'
+
+# URLs para arquivos de mídia
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+MEDIA_ROOT = ''
+
+# Remova o 'query_string' para URLs públicas
+GS_QUERYSTRING_AUTH = False
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    }
+}

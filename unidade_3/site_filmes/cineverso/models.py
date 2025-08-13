@@ -19,7 +19,7 @@ class Ator(models.Model):
 class Filme(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    capa = models.URLField(max_length=200)
+    capa = models.ImageField(upload_to='imagens-mateus/')
     genero = models.ManyToManyField(Genero, related_name='filmes')
     elenco = models.ManyToManyField(Ator, related_name='filmes')
     dt_lançamento = models.DateField()
