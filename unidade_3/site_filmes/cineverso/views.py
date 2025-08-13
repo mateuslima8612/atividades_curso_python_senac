@@ -1,10 +1,15 @@
 from django.shortcuts import render
-from .models import Filme
+from .models import Filme, Serie
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    filmes = Filme.objects.all()
+    ultimos_filmes = filmes.order_by('-id')[:5]
+
+    series = Serie.objects.all()
+    ultimas_series = series.order_by('-id')[:5]
+    return render(request, 'home.html', {'lista_filmes': filmes, 'ultimos_filmes': ultimos_filmes, 'lista_series': series, 'ultimas_series': ultimas_series})
 
 def criticas(request):
     return render(request, 'criticas.html')
@@ -20,4 +25,5 @@ def noticias(request):
     return render(request, 'noticias.html')
 
 def series(request):
-    return render(request, 'series.html')
+    series = Serie.objects.all()
+    return render(request, 'series.html', {'lista_series': series})

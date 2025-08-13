@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block titulo %}Cineverso - Séries{% endblock titulo %}
 {% block conteudo %}
-<h1>Essa é a página de series</h1>
-<a href="/">Clique para ir para a página inicial</a>
+<h2 class="pt-5 pb-5">Catálogo de séries</h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    {% for serie in lista_series %}
+        <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <img src="{{ serie.capa.url }}" alt="Capa de {{ serie.titulo }}" style="width: 100%; height: auto; border-radius: 5px;">
+            <p style="margin-top: 8px;">{{ serie.titulo }}</p>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

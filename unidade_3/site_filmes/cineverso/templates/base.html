@@ -2,53 +2,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %} {% endblock titulo %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'cineverso/style.css' %}">
-  </head>
-<body style="background-color: #0d1321; color: #f0ebd8;">
-    <nav class="ps-5 navbar navbar-expand-lg bg-dark py-4">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="/">
-            <img src="{% static 'cineverso/images/pngwing.com.png' %}" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
-            <span class="fs-3">Cineverso</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="/filmes">Filmes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="/series">Séries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="/noticias">Notícias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="/criticas">Críticas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="/embreve">Em breve</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-<div class="container d-flex justify-content-center">
-    <div class="container m-auto" style="height: 100%;">
-    <main>
-        {% block conteudo %}
-
-        {% endblock conteudo %}
-    </main>
-        <footer>{% include "partials/_footer.html" %}</footer>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titulo %}{% endblock titulo %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'cineverso/style.css' %}">
+</head>
+<body class="d-flex flex-column min-vh-100" style="background-color: #0d1321; color: #f0ebd8;">
+  <nav class="ps-5 navbar navbar-expand-lg bg-dark py-4">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="/">
+        <img src="{% static 'cineverso/images/pngwing.com.png' %}" alt="Logo" width="100" height="100">
+        <span class="fs-3">Cineverso</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link fs-5 text-white" href="/filmes">Filmes</a></li>
+          <li class="nav-item"><a class="nav-link fs-5 text-white" href="/series">Séries</a></li>
+          <li class="nav-item"><a class="nav-link fs-5 text-white" href="/noticias">Notícias</a></li>
+          <li class="nav-item"><a class="nav-link fs-5 text-white" href="/criticas">Críticas</a></li>
+          <li class="nav-item"><a class="nav-link fs-5 text-white" href="/embreve">Em breve</a></li>
+        </ul>
+      </div>
     </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </nav>
+
+  <main class="flex-grow-1">
+    <div class="container py-4">
+      {% block conteudo %}
+      {% endblock conteudo %}
+    </div>
+  </main>
+
+  {% include "partials/_footer.html" %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

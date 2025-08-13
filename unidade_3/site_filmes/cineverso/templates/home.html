@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 {% block titulo %}Cineverso{% endblock titulo %}
 {% block conteudo %}
-<h1>Essa é a página inicial</h1>
-<a href="/filmes">Clique para ir para a página de filmes</a><br>
-<a href="/series">Clique para ir para a página de series</a><br>
-<a href="/embreve">Clique para ir para a página de lançamentos futuros</a><br>
-<a href="/noticias">Clique para ir para a página de noticias</a><br>
-<a href="/criticas">Clique para ir para a página de criticas</a><br>
+<h1>Notícias e críticas dos seus filmes favoritos</h1>
+<h2 class="p-5">Últimos filmes adicionados</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    {% for filme in ultimos_filmes %}
+    <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="{{ filme.capa.url }}" alt="Capa de {{ filme.titulo }}" style="width: 100%; height: auto; border-radius: 5px;">
+        <p style="margin-top: 8px;">{{ filme.titulo }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<h2 class="p-5">Últimas séries adicionadas</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    {% for serie in ultimas_series %}
+    <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img src="{{ serie.capa.url }}" alt="Capa de {{ serie.titulo }}" style="width: 100%; height: auto; border-radius: 5px;">
+        <p style="margin-top: 8px;">{{ serie.titulo }}</p>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}

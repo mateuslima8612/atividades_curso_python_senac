@@ -28,10 +28,9 @@ class Filme(models.Model):
         return self.titulo
 
 class Serie(models.Model):
-
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    capa = models.URLField(max_length=200)
+    capa = models.ImageField(upload_to='imagens-mateus/')
     genero = models.ManyToManyField(Genero, related_name='series')
     elenco = models.ManyToManyField(Ator, related_name='series')
     dt_lançamento = models.DateField()
